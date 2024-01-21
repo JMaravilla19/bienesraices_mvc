@@ -9,11 +9,16 @@ import userRoutes from './Routes/UserRoutes.js';
 //This contains all the express values
 const app = express();
 
+//Enable PUG
+app.set('view engine', 'pug');
+app.set('views', './views');
 
 //This will help us to define file upload, cookies, etc.
 //This is known as Express Middleware.
 //app.use will search fo all routes that start with "/"
-app.use('/', userRoutes);
+app.use('/auth', userRoutes);
+
+
 
 
 //Define a port and run the project
